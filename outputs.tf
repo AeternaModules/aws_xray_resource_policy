@@ -1,7 +1,3 @@
-output "xray_resource_policies_id" {
-  description = "Map of id values across all xray_resource_policies, keyed the same as var.xray_resource_policies"
-  value       = { for k, v in aws_xray_resource_policy.xray_resource_policies : k => v.id if v.id != null && length(v.id) > 0 }
-}
 output "xray_resource_policies_bypass_policy_lockout_check" {
   description = "Map of bypass_policy_lockout_check values across all xray_resource_policies, keyed the same as var.xray_resource_policies"
   value       = { for k, v in aws_xray_resource_policy.xray_resource_policies : k => v.bypass_policy_lockout_check if v.bypass_policy_lockout_check != null }
